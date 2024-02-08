@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/chart.js"></script>
+    <canvas id="doughnutChart" width="400" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('doughnutChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Safe', 'Unsafe'],
+                datasets: [{
+                    data: [20, 80],
+                    backgroundColor: [
+                        'grey',
+                        'red'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutoutPercentage: 70, // Adjusts the size of the hole in the middle of the doughnut
+                responsive: false, // Set to true to enable responsiveness
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
